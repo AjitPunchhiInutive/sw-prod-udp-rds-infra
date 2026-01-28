@@ -1,0 +1,28 @@
+name: Terragrunt Init
+description: Runs terragrunt init step
+
+inputs:
+  workingDirectory:
+    description: Directory to run terragrunt commands
+    required: true
+  environment:
+    description: Environment name (e.g., dev, prod)
+    required: true
+  tflog:
+    description: Terraform log level
+    required: false
+    default: 'ERROR'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Terragrunt Init
+      shell: bash
+      env:
+        TF_LOG: ${{ inputs.tfLog }}
+      run: |
+        cd "${{ inputs.workingDirectory }}"
+        terragrunt run-all init --terragrunt-non-interactive
+
+
+

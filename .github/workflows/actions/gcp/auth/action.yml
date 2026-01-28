@@ -1,0 +1,41 @@
+name: GCP Auth via Workload Identity
+description: Authenticates to GCP using Workload Identity Federation
+
+inputs:
+  environment:
+    description: The target environment (e.g., dev, prod)
+    required: true
+
+  project_id:
+    description: The GCP Project ID
+    required: true
+
+  workload_identity_provider:
+    description: GCP Workload Identity Provider resource path
+    required: true
+
+  gcp_service_account:
+    description: (Optional) GCP Service Account email to impersonate
+    required: false
+    default: ""
+
+runs:
+  using: "composite"
+  steps:
+    - name: Authenticate to GCP
+      uses: google-github-actions/auth@v2
+      with:
+        project_id: ${{ inputs.project_id }}
+        workload_identity_provider: ${{ inputs.workload_identity_provider }}
+        # service_account: ${{ inputs.gcp_service_account }}
+    - name: Setup GCloud CLI
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        version: 'latest'
+    - name: Confirm Identity
+      shell: bash
+      run: |
+        echo "Authenticated to GCP using environment: ${{ inputs.environment }}, projectId: ${{ inputs.project_id }}"
+        gcloud config list
+        gcloud auth list
+        gcloud config get-value account

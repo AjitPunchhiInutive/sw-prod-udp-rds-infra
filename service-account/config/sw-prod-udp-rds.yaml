@@ -1,0 +1,11 @@
+deploy: true
+project_id: "intuitive-cloud-eng-sandbox"
+allow_key_creation: false
+service_accounts:
+  app_service:
+    account_id: "app-service-sa"
+    display_name: "Application Service Account"
+    description: "Basic service account for application workloads"
+    project_roles:
+      - "roles/logging.logWriter"
+      - "roles/monitoring.metricWriter"

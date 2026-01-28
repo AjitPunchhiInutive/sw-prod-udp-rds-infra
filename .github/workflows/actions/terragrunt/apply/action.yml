@@ -1,0 +1,26 @@
+name: Terragrunt Apply
+description: Runs terragrunt apply step
+
+inputs:
+  workingDirectory:
+    description: Directory to run terragrunt commands
+    required: true
+  environment:
+    description: Environment name (e.g., dev, prod)
+    required: true
+  tflog:
+    description: Terraform log level
+    required: false
+    default: 'ERROR'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Terragrunt Apply
+      shell: bash
+      env:
+        TF_LOG: ${{ inputs.tflog }}
+        PARALLELISM: ${{ inputs.parallelism }}
+      run: |
+        cd "${{ inputs.workingDirectory }}"
+        terragrunt apply tfplan.out --terragrunt-non-interactive

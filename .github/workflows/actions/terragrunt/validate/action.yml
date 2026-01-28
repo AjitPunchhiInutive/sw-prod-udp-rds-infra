@@ -1,0 +1,23 @@
+name: Terragrunt Validate
+description: Runs terragrunt validate step
+
+inputs:
+  workingDirectory:
+    description: Directory to run terragrunt commands
+    required: true
+  environment:
+    description: Environment name (e.g., dev, prod)
+    required: true
+  tflog:
+    description: Terraform log level
+    required: false
+    default: 'ERROR'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Terragrunt Validate
+      shell: bash
+      run: |
+        cd "${{ inputs.workingDirectory }}"
+        terragrunt validate

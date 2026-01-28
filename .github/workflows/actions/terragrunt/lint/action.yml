@@ -1,0 +1,24 @@
+name: Terragrunt Lint
+description: Runs terragrunt lint step
+
+inputs:
+  workingDirectory:
+    description: Directory to run terragrunt commands
+    required: true
+  environment:
+    description: Environment name (e.g., dev, prod)
+    required: true
+  tflog:
+    description: Terraform log level
+    required: false
+    default: 'ERROR'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Terragrunt Lint
+      shell: bash
+      run: |
+        cd "${{ inputs.workingDirectory }}"
+        curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+        tflint
