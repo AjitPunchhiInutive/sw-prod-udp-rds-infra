@@ -17,6 +17,6 @@ sub_folders:
     display_name: "sw-udp-sandbox"
     parent_folder: "sw-unified-data-platform"
 
-  sw-udp-sandbox-test:
-    display_name: "sq-udp-sandbox-test"
+  sw-udp-sandbox-dev:
+    display_name: "sq-udp-sandbox-dev"
     parent_folder: "sw-udp-sandbox"

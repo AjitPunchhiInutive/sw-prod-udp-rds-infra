@@ -6,8 +6,8 @@ on:
     branches:
       - main
     paths:
-      - './folders/config/**'
-      - '../modules/folders/**'
+      - '/folders/config/**'
+      - '/modules/folders/**'
 jobs:
   deploy:
     name: Deploy Infrastructure
