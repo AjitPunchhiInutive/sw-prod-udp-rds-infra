@@ -9,7 +9,7 @@ on:
 jobs:
  terragrunt-job:
     #uses: ../../gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml
-    uses: AjitPunchhiInutive/sw-prod-udp-rds-infra/blob/main/.github/workflows/terragrunt-folders-workflow.yml@main
+    uses: AjitPunchhiInutive/sw-prod-udp-rds-infra/.github/workflows/terragrunt-folders-workflow.yml@main
     with:
       workingDirectory: projects
       environment: prod
