@@ -3,10 +3,11 @@ organization_id: "203589767236"
 parent_folders:
   sw-unified-data-platform:
     display_name: "sw-unified-data-platform"
+
 sub_folders:
-  sw-udp-prod:
-    display_name: "sw-udp-prod"
-    parent_folder: sw-unified-data-platform
+  # sw-udp-prod:
+  #   display_name: "sw-udp-prod"
+  #   parent_folder: "sw-unified-data-platform"
   
   sw-udp-non-prod:
     display_name: "sw-udp-non-prod"
