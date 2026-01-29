@@ -14,8 +14,8 @@ jobs:
       workingDirectory: 'projects'
       environment: 'prod'
       tfLog: 'ERROR'
-      terraformVersion: '1.6.0'
-      terragruntVersion: '0.54.0'
+      terraformVersion: '1.10.3'
+      terragruntVersion: '0.68.16'
     secrets:
       TERRAGRUNT_GITHUB_ORG_TOKEN: ${{ secrets.TERRAGRUNT_GITHUB_ORG_TOKEN }}
       GCP_PROD_PROJECT_ID: ${{ secrets.GCP_PROD_PROJECT_ID }}
