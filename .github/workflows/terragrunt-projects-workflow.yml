@@ -6,8 +6,8 @@ on:
     branches:
       - main
     paths:
-      - './projects/**'
-      - '../modules/projects/**'
+      - 'projects/**'
+      - 'modules/projects/**'
 jobs:
   deploy:
     name: Deploy Infrastructure
