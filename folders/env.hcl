@@ -1,7 +1,7 @@
 locals {
   environment = "prod"
   environment_key = "p"
-  bucket_name = "itp-terraform-datafoundation-state-files"
+  bucket_name = "itp-devops-tfstate"
   gcp_project = "melodic-furnace-403022"
   region      = "us-east4"
   zone        = "us-east4-a"

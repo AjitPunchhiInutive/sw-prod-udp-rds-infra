@@ -11,7 +11,7 @@ generate "backend" {
   contents  = <<EOF
 terraform {
   backend "gcs" {
-    bucket     = "itp-terraform-datafoundation-state-files"
+    bucket     = "${local.environment_vars.bucket_name}"
     prefix     = "sw-infra-tfstate/${path_relative_to_include()}/state"
  }
 }
