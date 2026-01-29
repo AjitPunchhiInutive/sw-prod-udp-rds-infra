@@ -1,16 +1,22 @@
-name: Terragrunt Action Workflow Prod
+name: Deploy to Production
 
 on:
- workflow_dispatch:
- push:
-  branches:
-  - main
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
- terragrunt-job:
-    uses: ../gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml
-    # uses: southwire/gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml@main
+  deploy:
+    name: Deploy Infrastructure
+    uses: AjitPunchhiInutive/sw-prod-udp-rds-infra/.github/workflows/terragrunt-gcp-prod.yml@main
     with:
-      workingDirectory: projects
-      environment: prod
+      workingDirectory: 'projects'
+      environment: 'prod'
       tfLog: 'ERROR'
+      terraformVersion: '1.6.0'
+      terragruntVersion: '0.54.0'
+    secrets:
+      TERRAGRUNT_GITHUB_ORG_TOKEN: ${{ secrets.TERRAGRUNT_GITHUB_ORG_TOKEN }}
+      GCP_PROD_PROJECT_ID: ${{ secrets.GCP_PROD_PROJECT_ID }}
+      GCP_PROD_WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.GCP_PROD_WORKLOAD_IDENTITY_PROVIDER }}
