@@ -1,4 +1,4 @@
-name: Deploy Terrgraunt folder structre
+name: Deploy Projects
 
 on:
   workflow_dispatch:
