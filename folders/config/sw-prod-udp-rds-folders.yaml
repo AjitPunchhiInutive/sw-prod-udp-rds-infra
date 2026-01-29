@@ -5,9 +5,9 @@ parent_folders:
     display_name: "sw-unified-data-platform"
 
 sub_folders:
-  # sw-udp-prod:
-  #   display_name: "sw-udp-prod"
-  #   parent_folder: "sw-unified-data-platform"
+  sw-udp-production:
+    display_name: "sw-udp-production"
+    parent_folder: "sw-unified-data-platform"
   
   sw-udp-non-prod:
     display_name: "sw-udp-non-prod"
