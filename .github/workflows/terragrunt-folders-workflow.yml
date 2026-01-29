@@ -8,8 +8,8 @@ on:
 
 jobs:
  terragrunt-job:
-    uses: ../gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml
-    # uses: southwire/gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml@main
+    #uses: ../gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml
+     uses: AjitPunchhiInutive/sw-prod-udp-rds-infra/blob/main/.github/workflows/terragrunt-folders-workflow.yml
     with:
       workingDirectory: folders
       environment: prod
