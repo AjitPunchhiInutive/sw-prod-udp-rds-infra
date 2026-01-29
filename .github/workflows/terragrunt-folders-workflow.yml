@@ -1,16 +1,16 @@
 name: Terragrunt Action Workflow Prod
-
+ 
 on:
  workflow_dispatch:
  push:
   branches:
   - main
-
+ 
 jobs:
  terragrunt-job:
-    #uses: ../gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml
-     uses: AjitPunchhiInutive/sw-prod-udp-rds-infra/blob/main/.github/workflows/terragrunt-folders-workflow.yml
+    #uses: ../../gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml
+    uses: AjitPunchhiInutive/sw-prod-udp-rds-infra/blob/main/.github/workflows/terragrunt-folders-workflow.yml@main
     with:
-      workingDirectory: folders
+      workingDirectory: projects
       environment: prod
       tfLog: 'ERROR'
