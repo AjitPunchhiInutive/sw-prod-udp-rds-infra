@@ -1,4 +1,4 @@
-name: Terragrunt Action Workflow Prod
+name: Deploy to Production
 
 on:
   workflow_dispatch:
@@ -6,19 +6,17 @@ on:
     branches:
       - main
 
-# Add permissions if the reusable workflow needs them
-permissions:
-  id-token: write
-  contents: read
-  issues: write
-
 jobs:
-  terragrunt-job:
-    name: Deploy Terragrunt to Production
-    uses: AjitPunchhiInutive/sw-prod-udp-rds-infra/.github/workflows/terragrunt-folders-workflow.yml@main
+  deploy:
+    name: Deploy Infrastructure
+    uses: AjitPunchhiInutive/sw-prod-udp-rds-infra/.github/workflows/terragrunt-gcp-prod.yml@main
     with:
-      # Use snake_case (working_directory) not camelCase (workingDirectory)
-      working_directory: 'projects'
+      workingDirectory: 'projects'
       environment: 'prod'
-      terraform_version: '1.6.0'
-      action: 'plan'
+      tfLog: 'ERROR'
+      terraformVersion: '1.6.0'
+      terragruntVersion: '0.54.0'
+    secrets:
+      TERRAGRUNT_GITHUB_ORG_TOKEN: ${{ secrets.TERRAGRUNT_GITHUB_ORG_TOKEN }}
+      GCP_PROD_PROJECT_ID: ${{ secrets.GCP_PROD_PROJECT_ID }}
+      GCP_PROD_WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.GCP_PROD_WORKLOAD_IDENTITY_PROVIDER }}
