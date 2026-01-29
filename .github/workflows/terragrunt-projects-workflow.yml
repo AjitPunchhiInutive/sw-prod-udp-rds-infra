@@ -1,4 +1,4 @@
-name: Deploy to Production
+name: Deploy Terrgraunt folder structre
 
 on:
   workflow_dispatch:
@@ -9,13 +9,13 @@ on:
 jobs:
   deploy:
     name: Deploy Infrastructure
-    uses: AjitPunchhiInutive/sw-prod-udp-rds-infra/.github/workflows/terragrunt-gcp-prod.yml@main
+    uses: AjitPunchhiInutive/gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml@main
     with:
-      workingDirectory: 'projects'
+      workingDirectory: './projects/src'
       environment: 'prod'
       tfLog: 'ERROR'
-      terraformVersion: '1.6.0'
-      terragruntVersion: '0.54.0'
+      terraformVersion: '1.10.3'
+      terragruntVersion: '0.68.16'
     secrets:
       TERRAGRUNT_GITHUB_ORG_TOKEN: ${{ secrets.TERRAGRUNT_GITHUB_ORG_TOKEN }}
       GCP_PROD_PROJECT_ID: ${{ secrets.GCP_PROD_PROJECT_ID }}
