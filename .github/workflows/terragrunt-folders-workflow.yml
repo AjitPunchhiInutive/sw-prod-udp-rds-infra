@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     name: Deploy Infrastructure
-    uses: AjitPunchhiInutive/gh-actions-library/blob/main/.github/workflows/terragrunt-gcp-prod.yml@main
+    uses: AjitPunchhiInutive/gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml@main
     with:
       workingDirectory: 'projects'
       environment: 'prod'
