@@ -11,7 +11,7 @@ jobs:
     name: Deploy Infrastructure
     uses: AjitPunchhiInutive/gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml@main
     with:
-      workingDirectory: 'folders'
+      workingDirectory: './folders/src'
       environment: 'prod'
       tfLog: 'ERROR'
       terraformVersion: '1.10.3'
