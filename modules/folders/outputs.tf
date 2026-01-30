@@ -18,6 +18,14 @@ output "sub_folder_ids" {
   }
 }
 
+output "nested_folders_ids" {
+  description = "Map of nested-folder keys to folder IDs"
+  value = {
+    for key, folder in google_folder.nested_folders :
+    key => folder.name
+  }
+}
+
 output "all_folder_ids" {
   description = "Map of all folder keys to folder IDs"
   value = {

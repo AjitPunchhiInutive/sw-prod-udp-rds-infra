@@ -32,6 +32,9 @@ locals {
   
   # Extract sub folders
   sub_folders = lookup(local.merged_config, "sub_folders", {})
+
+  # Extract nested folders
+  nested_folders = lookup(local.merged_config, "nested_folders", {})
 }
 
 include {
@@ -47,4 +50,5 @@ inputs = {
   organization_id = local.organization_id
   parent_folders  = local.parent_folders
   sub_folders     = local.sub_folders
+  nested_folders  = local.nested_folders
 }

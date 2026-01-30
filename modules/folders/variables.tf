@@ -28,3 +28,11 @@ variable "sub_folders" {
   }))
   default = {}
 }
+variable "nested_folders" {
+  description = "Nested-folders to create (children of sub folders)"
+  type = map(object({
+    display_name  = string
+    parent_folder = string  # Key of the parent folder
+  }))
+  default = {}
+}
