@@ -21,7 +21,7 @@ sub_folders:
     display_name: "sw-udp-networking"
     parent_folder: "sw-unified-data-platform"
 
-nested_sub_folders:
+nested_folders:
   sw-udp-sandbox-test:
-  display_name: "sq-udp-sandbox-test"
-  parent_folder: "sw-udp-sandbox"
+    display_name: "sq-udp-sandbox-test"
+    parent_folder: "sw-udp-sandbox"
