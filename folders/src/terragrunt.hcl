@@ -95,6 +95,6 @@ terraform {
   source = "../../modules/folders"
 }
 
-inputs = {
-  folders_objects = local.folders_objects
-}
+# inputs = {
+#   folders_objects = local.folders_objects
+# }
