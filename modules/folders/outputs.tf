@@ -26,15 +26,15 @@ output "nested_folders_ids" {
   }
 }
 
-# output "all_folder_ids" {
-#   description = "Map of all folder keys to folder IDs"
-#   value = {
-#     for key, folder in local.all_folders :
-#     key => folder.id
-#   }
-# }
+output "all_folder_ids" {
+  description = "Map of all folder keys to folder IDs"
+  value = {
+    for key, folder in local.all_folders :
+    key => folder.id
+  }
+}
 
-# output "folder_details" {
-#   description = "Detailed information for all folders"
-#   value       = local.all_folders
-# }
+output "folder_details" {
+  description = "Detailed information for all folders"
+  value       = local.all_folders
+}
