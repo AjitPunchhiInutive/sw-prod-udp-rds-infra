@@ -3,7 +3,7 @@ resource "google_folder" "parent_folders" {
   for_each = var.parent_folders
   
   display_name = each.value.display_name
-  parent       = "organizations/203589767236"
+  parent       = "organizations/${var.organization_id}"
 }
 
 # Sub-Folders (Children of parent folders)
