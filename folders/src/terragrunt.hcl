@@ -97,5 +97,5 @@ terraform {
 
 inputs = {
   organization_id = local.global_vars.locals.organization_id  # Add this line
-  folders_objects = local.folders_objects
+  #folders_objects = local.folders_objects
 }
