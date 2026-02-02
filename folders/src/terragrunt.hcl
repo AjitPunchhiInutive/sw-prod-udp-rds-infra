@@ -95,6 +95,7 @@ terraform {
   source = "../../modules/folders"
 }
 
-# inputs = {
-#   folders_objects = local.folders_objects
-# }
+inputs = {
+  organization_id = local.global_vars.locals.organization_id  # Add this line
+  folders_objects = local.folders_objects
+}
