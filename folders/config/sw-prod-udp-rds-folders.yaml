@@ -3,36 +3,35 @@ organization_id: "203589767236"
 parent_folders:
   sw-unified-data-platform:
     display_name: "sw-unified-data-platform"
-    deletion_protection: true
+
 
 sub_folders:
   sw-udp-production:
     display_name: "sw-udp-production"
     parent_folder: "sw-unified-data-platform"
-    deletion_protection: true
   
   sw-udp-non-prod:
     display_name: "sw-udp-non-prod"
     parent_folder: "sw-unified-data-platform"
-    deletion_protection: true
+
   
   sw-udp-sandbox:
     display_name: "sw-udp-sandbox"
     parent_folder: "sw-unified-data-platform"
-    deletion_protection: true
+
 
   sw-udp-networking:
     display_name: "sw-udp-networking"
     parent_folder: "sw-unified-data-platform"
-    deletion_protection: true
+
 
 nested_folders:
   sw-udp-sandbox-test:
     display_name: "sq-udp-sandbox-test"
     parent_folder: "sw-udp-sandbox"
-    deletion_protection: true
+
 
   sw-udp-sandbox-demo:
     display_name: "sw-udp-sandbox-demo"
     parent_folder: "sw-udp-sandbox"
-    deletion_protection: true
+
