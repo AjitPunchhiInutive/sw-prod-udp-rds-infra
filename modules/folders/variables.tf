@@ -16,6 +16,7 @@ variable "parent_folders" {
   description = "Parent folders to create (direct children of organization)"
   type = map(object({
     display_name = string
+    deletion_protection = bool
   }))
   default = {}
 }
@@ -25,6 +26,7 @@ variable "sub_folders" {
   type = map(object({
     display_name  = string
     parent_folder = string  # Key of the parent folder
+    deletion_protection = bool
   }))
   default = {}
 }
@@ -33,12 +35,7 @@ variable "nested_folders" {
   type = map(object({
     display_name  = string
     parent_folder = string  # Key of the parent folder
+    deletion_protection = bool
   }))
   default = {}
-}
-variable "deletion_protection" {
-  description = "deleted folders"
-  type = string
-  default = {}
-  
 }
