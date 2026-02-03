@@ -36,3 +36,9 @@ variable "nested_folders" {
   }))
   default = {}
 }
+variable "deletion_protection" {
+  description = "deleted folders"
+  type = string
+  default = {}
+  
+}

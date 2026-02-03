@@ -4,7 +4,7 @@ resource "google_folder" "parent_folders" {
   
   display_name = each.value.display_name
   parent       = "organizations/${var.organization_id}"
-  deletion_protection = false
+  deletion_protection = var.deletion_protection
 }
 
 # Sub-Folders (Children of parent folders)
@@ -13,8 +13,9 @@ resource "google_folder" "sub_folders" {
   
   display_name = each.value.display_name
   parent       = google_folder.parent_folders[each.value.parent_folder].name
-  deletion_protection = false
+  deletion_protection = var.deletion_protection
   depends_on = [google_folder.parent_folders]
+
   
 }
 
@@ -24,6 +25,6 @@ resource "google_folder" "nested_folders" {
   
   display_name = each.value.display_name
   parent       = google_folder.sub_folders[each.value.parent_folder].name
-  deletion_protection = false
+  deletion_protection = var.deletion_protection
   depends_on = [google_folder.sub_folders]
 }
