@@ -97,5 +97,5 @@ terraform {
 
 inputs = {
  organization_id = "203589767236"  # Add this line
- folders_objects = local.folders_objects
+ #folders_objects = local.folders_objects
 }
