@@ -35,3 +35,7 @@ nested_folders:
     display_name: "sw-udp-sandbox-demo"
     parent_folder: "sw-udp-sandbox"
 
+  sw-udp-sandbox-app-demo:
+    display_name: "sw-udp-sandbox-app-demo"
+    parent_folder: "sw-udp-sandbox"
+
