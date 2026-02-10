@@ -1,8 +1,9 @@
 deploy: true
-organization_id: "203589767236"
+organization_id: 203589767236
 parent_folders:
   sw-unified-data-platform:
     display_name: "sw-unified-data-platform"
+
 
 sub_folders:
   sw-udp-production:
@@ -12,20 +13,29 @@ sub_folders:
   sw-udp-non-prod:
     display_name: "sw-udp-non-prod"
     parent_folder: "sw-unified-data-platform"
+
   
   sw-udp-sandbox:
     display_name: "sw-udp-sandbox"
     parent_folder: "sw-unified-data-platform"
 
+
   sw-udp-networking:
     display_name: "sw-udp-networking"
     parent_folder: "sw-unified-data-platform"
+
 
 nested_folders:
   sw-udp-sandbox-test:
     display_name: "sq-udp-sandbox-test"
     parent_folder: "sw-udp-sandbox"
 
+
   sw-udp-sandbox-demo:
     display_name: "sw-udp-sandbox-demo"
     parent_folder: "sw-udp-sandbox"
+
+  sw-udp-sandbox-app-demo:
+    display_name: "sw-udp-sandbox-app-demo"
+    parent_folder: "sw-udp-sandbox"
+
