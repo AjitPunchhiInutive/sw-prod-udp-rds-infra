@@ -1,0 +1,13 @@
+deploy: true
+folder_id: 656386951644
+policy_boolean:
+  constraints/iam.disableServiceAccountKeyCreation: true
+  constraints/iam.NoServiceAccountExternalKeyCreation: true
+  constraints/iam.disableServiceAccountKeyUpload: false
+policy_list:
+  constraints/iam.allowedPolicyMemberDomains:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values:
+      - "southwire.com"
