@@ -1,20 +1,15 @@
 deploy: true
 organization_id: "203589767236"
-
 parent_folders:
   sw-unified-data-platform:
       display_name: "sw-unified-data-platform"
-
 sub_folders:
   sw-udp-production:
     display_name: "sw-udp-production"
-    parent_folder: "sw-unified-data-platform"
-  
+    parent_folder: "sw-unified-data-platform" 
   sw-udp-non-prod:
     display_name: "sw-udp-non-prod"
     parent_folder: "sw-unified-data-platform"
-
-  
   sw-udp-sandbox:
     display_name: "sw-udp-sandbox"
     parent_folder: "sw-unified-data-platform"
