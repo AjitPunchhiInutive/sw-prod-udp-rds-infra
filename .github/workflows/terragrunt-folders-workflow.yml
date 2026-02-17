@@ -1,4 +1,4 @@
-name: Deploy Terrgraunt folder structre
+name: Deploy Terragrunt folder structure
 
 on:
   workflow_dispatch:
@@ -8,6 +8,7 @@ on:
     paths:
       - 'folders/**'
       - 'modules/folders/**'
+
 jobs:
   deploy:
     name: Deploy Infrastructure
