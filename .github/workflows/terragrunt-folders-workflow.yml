@@ -1,4 +1,4 @@
-name: Deploy Terrgraunt folder structre
+name: Deploy Terragrunt folder structure
 
 on:
   workflow_dispatch:
@@ -8,9 +8,11 @@ on:
     paths:
       - 'folders/**'
       - 'modules/folders/**'
+
 jobs:
   deploy:
     name: Deploy Infrastructure
+    environment: production
     uses: AjitPunchhiInutive/gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml@main
     with:
       workingDirectory: './folders/src'
