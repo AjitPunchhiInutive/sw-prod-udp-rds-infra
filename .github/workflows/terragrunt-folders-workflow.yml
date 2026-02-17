@@ -1,4 +1,4 @@
-name: Deploy Terragrunt folder structure
+name: Deploy Terrgraunt folder structre
 
 on:
   workflow_dispatch:
@@ -8,18 +8,14 @@ on:
     paths:
       - 'folders/**'
       - 'modules/folders/**'
-
 jobs:
   deploy:
     name: Deploy Infrastructure
-    environment: production
+    environment: 'terragrunt'
     uses: AjitPunchhiInutive/gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml@main
     with:
       workingDirectory: './folders/src'
-      environment: 'terragrunt'
       tfLog: 'ERROR'
-      terraformVersion: '1.10.3'
-      terragruntVersion: '0.68.16'
     secrets:
       GCP_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
       GCP_PROD_PROJECT_ID: ${{ secrets.GCP_PROD_PROJECT_ID }}
