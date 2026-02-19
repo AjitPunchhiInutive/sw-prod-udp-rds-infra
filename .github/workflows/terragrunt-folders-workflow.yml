@@ -15,7 +15,7 @@ jobs:
     uses: AjitPunchhiInutive/gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml@main
     with:
       workingDirectory: './folders/src'
-      environment: 'terragrunt'
+      # environment: 'terragrunt'
       tfLog: 'ERROR'
       terraformVersion: '1.10.3'
       terragruntVersion: '0.68.16'
