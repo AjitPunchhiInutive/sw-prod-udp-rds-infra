@@ -1,0 +1,46 @@
+deploy: true
+
+pool_id: gha-bootstrap-pool
+
+pool_display_name: gha-bootstrap-pool
+
+provider_id: gha-bootstrap-provider
+
+provider_display_name: gha-bootstrap-provider
+
+project_id: iac-core
+
+repository_owner: demo
+
+sa_account_id: gha-bootstrap-wif-sa
+
+sa_display_name: GHA Bootstrap WIF Service Account Email
+
+sa_description: Service account for GHA Bootstrap with Workload Identity Federation
+
+project_roles:
+
+  - roles/storage.admin
+
+  - roles/iam.serviceAccountAdmin
+
+  - roles/iam.workloadIdentityPoolAdmin
+
+org_id: "123456"
+
+org_roles:
+
+  - roles/iam.organizationRoleAdmin
+
+  - roles/resourcemanager.organizationViewer
+
+  - roles/resourcemanager.folderCreator
+
+sa_mapping:
+
+  gcp-bootstrap-foundation":
+
+    sa_name: projects/iac-core/serviceAccounts/gha-bootstrap-wif-sa@iac-core.iam.gserviceaccount.com
+
+    attribute: "attribute.repository/itp-company/gcp-bootstrap-foundation"
+ 

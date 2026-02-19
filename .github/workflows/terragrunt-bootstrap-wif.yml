@@ -6,15 +6,14 @@ on:
     branches:
       - main
     paths:
-      - 'folders/**'
-      - 'modules/folders/**'
+      - 'workload-identity/**'
 
 jobs:
   deploy:
     name: Deploy Infrastructure
     uses: AjitPunchhiInutive/gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml@main
     with:
-      workingDirectory: './folders/src'
+      workingDirectory: wprkload-identity
       environment: 'terragrunt'
       tfLog: 'ERROR'
       terraformVersion: '1.10.3'
