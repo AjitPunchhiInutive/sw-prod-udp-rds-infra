@@ -36,8 +36,8 @@ include {
 }
 
 terraform {
-  source = "git@github.com:AjitPunchhiInutive/-sw-prod-udp-rds-infra-modules.git//folders?ref=main"
-  # source = "../modules/folders"
+  #source = "git@github.com:AjitPunchhiInutive/-sw-prod-udp-rds-infra-modules.git//folders?ref=main"
+   source = "../modules/folders"
 }
 
 inputs = {
