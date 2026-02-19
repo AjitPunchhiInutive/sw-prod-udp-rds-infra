@@ -15,7 +15,7 @@ jobs:
     uses: AjitPunchhiInutive/gh-actions-library/.github/workflows/terragrunt-gcp-prod.yml@main
     with:
       workingDirectory: './folders/src'
-      environment: 'terragrunt'
+      #environment: 'terragrunt'
       tfLog: 'ERROR'
       terraformVersion: '1.10.3'
       terragruntVersion: '0.68.16'
@@ -23,5 +23,4 @@ jobs:
       GCP_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
       GCP_PROD_PROJECT_ID: ${{ secrets.GCP_PROD_PROJECT_ID }}
       GCP_PROD_WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.GCP_PROD_WORKLOAD_IDENTITY_PROVIDER }}
-      SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
