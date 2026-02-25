@@ -1,13 +1,90 @@
 deploy: true
 folder_id: 107298344544
+
 policy_boolean:
-  constraints/iam.disableServiceAccountKeyCreation: true
-  constraints/iam.NoServiceAccountExternalKeyCreation: true
-  constraints/iam.disableServiceAccountKeyUpload: false
+  constraints/cloudkms.disableBeforeDestroy: true
+  constraints/storage.publicAccessPrevention: true
+  constraints/storage.uniformBucketLevelAccess: true
+  constraints/gcp.detailedAuditLoggingMode: true
+  constraints/compute.skipDefaultNetworkCreation: true
+  constraints/iam.disableAuditLoggingExemption: true
+  constraints/iam.automaticIamGrantsForDefaultServiceAccounts: true
+  constraints/ainotebooks.disableRootAccess: true
+  constraints/ainotebooks.requireAutoUpgradeSchedule: true
+  constraints/ainotebooks.disableFileDownloads: true
+  constraints/ainotebooks.restrictPublicIp: true
+  constraints/pubsub.enforceInTransitRegions: true
+  constraints/storage.secureHttpTransport: true
+
 policy_list:
-  constraints/iam.allowedPolicyMemberDomains:
+  constraints/cloudkms.minimumDestroyScheduledDuration:
+    inherit_from_parent: false
+    suggested_value: "90d"
+    status: true
+    values:
+      - "90d"
+
+  constraints/compute.vmExternalIpAccess:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/iam.serviceAccountKeyExposureResponse:
+    inherit_from_parent: true
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/gcp.resourceLocations:
     inherit_from_parent: false
     suggested_value: ""
     status: true
     values:
-      - "southwire.com"
+      - "us-east4"
+      - "us-central1"
+
+  constraints/vertexai.allowedGenAIModels:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/vertexai.allowedModels:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/vertexai.allowedPartnerModelFeatures:
+    inherit_from_parent: true
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/ainotebooks.accessMode:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values:
+      - "DenyServiceAccount"
+
+  constraints/ainotebooks.environmentOptions:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/ainotebooks.restrictVpcNetworks:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/storage.restrictAuthTypes:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values:
+      - "ALL"
+      - "HMAC_SIGNED_REQUESTS"
