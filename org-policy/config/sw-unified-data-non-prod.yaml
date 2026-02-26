@@ -16,7 +16,34 @@ policy_boolean:
   constraints/pubsub.enforceInTransitRegions: true
   constraints/storage.secureHttpTransport: true
 
+  constraints/compute.disableVpcInternalIpv6: true
+  constraints/compute.requireOsConfig: true
+  constraints/compute.requireOsLogin: true
+  constraints/compute.requireShieldedVm: true
+  constraints/compute.setNewProjectDefaultToZonalDNSOnly: true
+  constraints/iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts: true
+  constraints/compute.restrictXpnProjectLienRemoval: true
+  constraints/iam.restrictCrossProjectServiceAccountLienRemoval: true
+  constraints/dataflow.managed.disableUsePublicIps: true
+  constraints/dataflow.managed.blockProjectSshKeys: true
+  constraints/run.managed.requireInvokerIam: true
+  constraints/compute.disableAllIpv6: true
+  constraints/compute.disableGlobalSerialPortAccess: true
+  constraints/compute.disableGuestAttributesAccess: true
+  constraints/compute.disableSerialPortAccess: true
+  constraints/compute.disableSerialPortLogging: true
+  constraints/datastream.disablePublicConnectivity: true
+  constraints/iam.managed.disableServiceAccountApiKeyCreation: true
+  constraints/iam.managed.disableServiceAccountKeyCreation: true
+  constraints/iam.disableServiceAccountCreation: true
+  constraints/compute.managed.blockPreviewFeatures: true
+  constraints/compute.disableGlobalCloudArmorPolicy: true
+  constraints/compute.disableHybridCloudIpv6: true
+  constraints/compute.disableInternetNetworkEndpointGroup: true
+  constraints/compute.disableVpcExternalIpv6: true
+
 policy_list:
+
   constraints/cloudkms.minimumDestroyScheduledDuration:
     inherit_from_parent: false
     suggested_value: "90d"
@@ -88,3 +115,156 @@ policy_list:
     values:
       - "ALL"
       - "HMAC_SIGNED_REQUESTS"
+
+  constraints/compute.requireVpcFlowLogs:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values:
+      - "COMPREHENSIVE"
+
+  constraints/compute.vmCanIpForward:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/compute.managed.allowedVlanAttachmentEncryption:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values:
+      - "IPSEC"
+
+  constraints/compute.requireSslPolicy:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/compute.sharedReservationsOwnerProjects:
+    inherit_from_parent: true
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/iam.allowServiceAccountCredentialLifetimeExtension:
+    inherit_from_parent: true
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/resourcemanager.allowedImportSources:
+    inherit_from_parent: true
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/resourcemanager.allowedExportDestinations:
+    inherit_from_parent: true
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/compute.restrictCloudNATUsage:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/compute.restrictDedicatedInterconnectUsage:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/compute.restrictPartnerInterconnectUsage:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/compute.restrictVpnPeerIPs:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/compute.restrictLoadBalancerCreationForTypes:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values:
+      - "INTERNAL"
+
+  constraints/compute.restrictSharedVpcHostProjects:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values:
+      - "projects/sw-dev-udp-host-network"
+      - "projects/sw-test-udp-host-network"
+      - "projects/sw-prod-udp-host-network"
+
+  constraints/gcp.restrictServiceUsage:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values:
+      - "projects/sw-dev-udp-host-network"
+      - "projects/sw-test-udp-host-network"
+      - "projects/sw-prod-udp-host-network"
+
+  constraints/run.allowedIngress:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/run.allowedVPCEgress:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/storage.softDeletePolicySeconds:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values:
+      - "7776000"
+
+  constraints/storage.retentionPolicySeconds:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values:
+      - "2592000"
+
+  constraints/dataform.restrictGitRemotes:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/iam.serviceAccountKeyExpiryHours:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values:
+      - "2160"
+
+  constraints/commerceorggovernance.disablePublicMarketplace:
+    inherit_from_parent: true
+    suggested_value: ""
+    status: true
+    values: []
+
+  constraints/compute.restrictVpcPeering:
+    inherit_from_parent: false
+    suggested_value: ""
+    status: true
+    values:
+      - "projects/sw-dev-udp-host-network/global/networks/vpc-sw-dev-udp-host"
+      - "projects/sw-test-udp-host-network/global/networks/vpc-sw-test-udp-host"
+      - "projects/sw-prod-udp-host-network/global/networks/vpc-sw-prod-udp-host"
